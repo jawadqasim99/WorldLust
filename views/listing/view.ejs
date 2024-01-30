@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View details</title>
+</head>
+<body>
+    <h1>List</h1>
+    <ul>
+        <li><%= listDetails.title %></li>
+        <li><%= listDetails.description %></li>
+      
+        <li>&#8360; <%= listDetails.price.toLocaleString('en-PK'); %></li>
+        <li><%= listDetails.location %></li>
+        <li><%= listDetails.country %></li>
+    </ul>
+    <form action="/listing/<%= listDetails._id %>/edit" method="GET" >
+        <button>Edit</button>
+    </form>
+</body>
+</html>

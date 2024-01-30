@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>all list</title>
+</head>
+<body>
+  <h1>All List</h1>
+  <form action="/lisitng/new" method="get"><button>New Listing</button></form>
+  <% for(let list of listingData){ %>
+    <ul>
+       <a href="/listing/<%= list._id %>" target="_blank" > <li><%= list.title %></li></a>
+    </ul>
+    <% } %>  
+    
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edit list</title>
+</head>
+<body>
+    <h1>Edit Listing Item:</h1>
+    <form action="/lisitng/new" method="get"><button>New Listing</button></form>
+    <form action="/listing/<%= listDetails._id %>?_method=PUT" method="post">
+        <input type="text" name="listing[title]" value="<%=listDetails.title %>">
+        <br><br>
+        <textarea name="listing[description]"  cols="30" rows="10"><%= listDetails.description %></textarea>
+        <br><br>
+        <input type="number" name="listing[price]" value="<%=listDetails.price %>"><br><br>
+        <input type="text" name="listing[location]" value="<%=listDetails.location %>">
+        <br><br>
+        <input type="text" name="listing[country]" value="<%=listDetails.country %>">
+        <br><br>
+        <button>Update</button>
+    </form>
+</body>
+</html>
