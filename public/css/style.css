@@ -1,0 +1,39 @@
+body{
+    font-family: 'Baloo 2', sans-serif !important;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+}
+.navbar{
+    height: 5rem ;
+
+}
+.navbar-brand i{
+    color: #FF385C;
+   font-size: 2.5rem;
+}
+.nav-link:hover {
+    color: black !important;
+
+   
+    
+}
+.listing{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    margin: 4rem;
+}
+.card{
+    border: none !important;
+    display: flex ;
+    margin: 1rem;
+    margin-left: 2.5rem;
+}
+.card img{
+    width: 100% !important;
+    height: 15rem !important;
+    border-radius: 1rem !important;
+    object-fit: cover;
+}
+.listing-link{
+    text-decoration: none;
+}

@@ -6,6 +6,7 @@ const { request } = require("express");
 const app = express();
 const methodOverride=require("method-override");
 const { get } = require("https");
+let engine = require('ejs-mate');
 
 
 // set all addional that connect ejs and other
@@ -14,6 +15,7 @@ app.set("views" , path.join(__dirname,"/views"));
 app.use(express.static(path.join(__dirname,"public")));
 app.use(express.urlencoded({extended:true}));
 app.use(methodOverride('_method'));
+app.engine('ejs', engine);
 //.......................................
 
 
@@ -33,12 +35,26 @@ app.listen(8000,()=>{
 //...............................................
 
 
+
 /// just for check server
 app.get("/",(req,res)=>{
     res.send("All ok")
 })
 //.................................................
 
+
+// Add a new Listing
+// Render a new page 
+app.get("/listing/new",(req,res)=>{
+    res.render("listing/newList.ejs");
+ })
+//  Post listing
+app.post("/listing",async(req,res)=>{
+  
+   let newList=new Listing(req.body.listing);
+   await newList.save();
+    res.redirect("/listing");
+})
 
 //Render all listing data
 app.get("/listing",async(req,res)=>{
@@ -68,6 +84,15 @@ app.get("/listing/:id/edit",async(req,res)=>{
 // Update form with new data
 app.put("/listing/:id",async(req,res)=>{
     let {id}=req.params;
-    await Listing.findByIdAndUpdate(id,req.body.listing);
+    await Listing.findByIdAndUpdate(id,{...req.body.listing});
    res.redirect(`/listing/${id}`);
+})
+//........................................................
+
+
+// Delete post 
+app.delete("/listing/:id",async(req,res)=>{
+    let {id}=req.params;
+   await Listing.findByIdAndDelete(id);
+   res.redirect("/listing");
 })
