@@ -1,9 +1,13 @@
 body{
     font-family: 'Baloo 2', sans-serif !important;
     font-family: 'Plus Jakarta Sans', sans-serif !important;
+    /* width: 99%; */
+    width: 100%;
+    /* height: 100vh; */
 }
 .navbar{
     height: 5rem ;
+    width: 100%;
 
 }
 .navbar-brand i{
@@ -16,6 +20,9 @@ body{
    
     
 }
+
+
+/* show card listingn  */
 .listing{
     display: flex;
     flex-wrap: wrap;
@@ -25,15 +32,52 @@ body{
 .card{
     border: none !important;
     display: flex ;
-    margin: 1rem;
-    margin-left: 2.5rem;
+    
 }
-.card img{
+.card-img-top{
     width: 100% !important;
     height: 15rem !important;
     border-radius: 1rem !important;
     object-fit: cover;
 }
+.card-img-overlay{
+    opacity: 0;
+}
+.card-img-overlay:hover{
+    opacity: 0.2;
+    background-color: white;
+}
+ .card-body{
+    padding: 0 !important;
+ }
+
 .listing-link{
     text-decoration: none;
+}
+
+
+/* Show image  */
+.show-image{
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+}
+#show-btn{
+    display: flex;
+}
+
+/* New Listing form  */
+.new-listing{
+    margin-bottom: 0.5rem !important    ;
+
+}
+
+@media (min-width:200) and (max-width: 800px) {
+    .listing{
+        display: flex;
+       flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      
+    }
 }

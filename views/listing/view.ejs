@@ -1,18 +1,37 @@
 <% layout('/layouts/boilerplate.ejs') -%>
 <body>
-    <h1>List</h1>
-    <ul>
-        <li><%= listDetails.title %></li>
-        <li><%= listDetails.description %></li>
-      
-        <li>&#8360; <%= listDetails.price.toLocaleString('en-PK'); %></li>
-        <li><%= listDetails.location %></li>
-        <li><%= listDetails.country %></li>
-    </ul>
-    <form action="/listing/<%= listDetails._id %>/edit" method="GET" >
-        <button>Edit</button>
-    </form>
-    <form action="/listing/<%= listDetails._id %>?_method=DELETE" method="post" >
-        <button>Delete</button>
-    </form>
+   
+    
+    <div class="row ">
+      <div class="col-8 offset-3 mt-2">
+        <h3 >Listing Details</h3>
+    </div>
+    <div class="col-6 offset-3">
+        <div class="card  " >
+            <div class=" show-image ">
+                <img src="<%=listDetails.image%>" class="card-img-top " alt="listing ">
+            </div>
+          
+            <div class="card-body mt-4">
+              <h5 style="color: black;"><%= listDetails.title %></h5>
+              <p class="card-text" style="color: black;"><%=listDetails.description%></p>
+              <p class="card-text" style="color: black;">RS <%= listDetails.price.toLocaleString('en-PK') %> / Night</p>
+              <p class="card-text" style="color: black;"><%=listDetails.location%></p>
+              <p class="card-text" style="color: black;"><%= listDetails.country%></p>
+            </div>
+          </div>
+         <div class="col-1 " id="show-btn">
+            
+               
+          <a href="/listing/<%= listDetails._id %>/edit">
+            <button class="btn btn-dark ">Edit</button></a>
+         
+        <form action="/listing/<%= listDetails._id %>?_method=DELETE" method="post" >
+            <button  class="btn btn-dark offset-3">Delete</button>
+        </form></div>
+    </div>
+       
+      </div>
+   
+    
 </body>
