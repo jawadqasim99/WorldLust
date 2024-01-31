@@ -12,7 +12,7 @@
                 <img src="<%=listDetails.image%>" class="card-img-top " alt="listing ">
             </div>
           
-            <div class="card-body mt-4">
+            <div class="card-body mt-5">
               <h5 style="color: black;"><%= listDetails.title %></h5>
               <p class="card-text" style="color: black;"><%=listDetails.description%></p>
               <p class="card-text" style="color: black;">RS <%= listDetails.price.toLocaleString('en-PK') %> / Night</p>
@@ -20,14 +20,14 @@
               <p class="card-text" style="color: black;"><%= listDetails.country%></p>
             </div>
           </div>
-         <div class="col-1 " id="show-btn">
+         <div class="col-1 mt-4 " id="show-btn">
             
                
           <a href="/listing/<%= listDetails._id %>/edit">
             <button class="btn btn-dark ">Edit</button></a>
          
         <form action="/listing/<%= listDetails._id %>?_method=DELETE" method="post" >
-            <button  class="btn btn-dark offset-3">Delete</button>
+            <button  class="btn btn-dark offset-3 ">Delete</button>
         </form></div>
     </div>
        

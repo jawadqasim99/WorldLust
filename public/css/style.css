@@ -4,6 +4,14 @@ body{
     /* width: 99%; */
     width: 100%;
     /* height: 100vh; */
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.footer{
+    margin-top: 1rem;
+    flex: 1;
 }
 .navbar{
     height: 5rem ;
@@ -20,6 +28,7 @@ body{
    
     
 }
+
 
 
 /* show card listingn  */
@@ -71,6 +80,64 @@ body{
     margin-bottom: 0.5rem !important    ;
 
 }
+/* //// footer */
+
+
+.footer{
+ 
+   
+
+    background-color:#1C1F23;
+    color: white;
+    
+
+}
+.f-container{
+ 
+    display: flex;
+   
+   
+    justify-content: space-between;
+    
+    height: 100%;
+    margin-top: 1.5rem;
+}
+ .footer-des ul{
+    display: flex;
+
+}
+.footer-des ul li{
+ list-style: none;
+    margin-left: 1rem;
+
+}
+.footer-icn{
+    width: 20rem;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 1rem;
+  
+}
+.footer-icn .eng{
+    display: flex;
+  
+   }
+   .footer-icn .eng p{
+    margin-left: 1rem;
+   }
+.footer-icn .dolar{
+
+    display: flex;
+  
+}
+.footer-icn .dolar p{
+    margin-left: 1rem;
+}
+.f-icons i{
+/* margin-left: 1rem; */
+margin-right: 1rem;
+}
+
 
 @media (min-width:200) and (max-width: 800px) {
     .listing{
