@@ -33,10 +33,11 @@ body{
 
 /* show card listingn  */
 .listing{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: start;
-    margin: 4rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-gap: 10px;
+    margin-left: 2rem;
+  
 }
 .card{
     border: none !important;
@@ -101,41 +102,41 @@ body{
     
     height: 100%;
     margin-top: 1.5rem;
+    /* align-items: center; */
 }
- .footer-des ul{
+ul{
     display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
 
 }
-.footer-des ul li{
+ ul li{
  list-style: none;
-    margin-left: 1rem;
+ cursor: pointer;
+  
 
 }
 .footer-icn{
-    width: 20rem;
+    
     display: flex;
-    justify-content: space-between;
-    margin-right: 1rem;
+    
+   justify-content: center;
+  
+   gap: 1.5rem;
+   margin-right: 1rem;
+   cursor: pointer;
   
 }
-.footer-icn .eng{
+.footer-icn .icons{
     display: flex;
-  
-   }
-   .footer-icn .eng p{
-    margin-left: 1rem;
-   }
-.footer-icn .dolar{
-
-    display: flex;
-  
-}
-.footer-icn .dolar p{
-    margin-left: 1rem;
+    gap: 0.8rem;
 }
 .f-icons i{
-/* margin-left: 1rem; */
-margin-right: 1rem;
+    margin-left: 1rem;
+ 
+    
+   
 }
 
 
